@@ -1,0 +1,7 @@
+﻿
+namespace AdapterPattern
+{
+    class Image
+    {
+    }
+}
