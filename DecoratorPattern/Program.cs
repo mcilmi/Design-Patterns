@@ -1,13 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace DecoratorPattern {
-    class Program {
-        static void Main(string[] args) {
-            storeCreditCard(new Compress(new Encrypt((new CloudStream()))));
-        }
-
-        public static void storeCreditCard(IStream stream) {
-            stream.Write("Maxamed Cilmi");
+    public class Program {
+        public static void Main(string[] args) {
+            var editor = new Editor();
+            editor.OpenProject();
         }
     }
 }
