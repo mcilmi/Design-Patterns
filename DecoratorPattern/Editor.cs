@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DecoratorPattern {
     public class Editor {
-        public void OpenProject() {
+        public void OpenProjects() {
             IArtifact[] artifacts = {
                 new MainIcon(new Artifact("Program")), 
                 new ErrorIcon(new Artifact("Editor")), 
