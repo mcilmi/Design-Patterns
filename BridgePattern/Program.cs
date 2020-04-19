@@ -1,9 +1,13 @@
 ﻿using System;
 
 namespace BridgePattern {
-    class Program {
-        static void Main(string[] args) {
-            Console.WriteLine("Buundo Pattern!");
+    public class Program {
+        public static void Main(string[] args) {
+            var remoteControl = new RemoteControl(new SamsungTv());
+            remoteControl.TurnOn();
+            remoteControl.SetChannel(34);
+            remoteControl.SetChannel(27);
+            remoteControl.TurnOff();
         }
     }
 }

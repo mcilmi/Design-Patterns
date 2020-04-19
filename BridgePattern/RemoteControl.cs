@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 
-// RemoteControl
-//  SonyRemoteControl
-//  AdvancedRemoteControl
-//      SonyAdvancedRemoteControl    
-
 namespace BridgePattern {
-   public abstract class RemoteControl {
-       public abstract void TurnOn();
+   public class RemoteControl : IRemoteControl {
+       private readonly IDevice _device;
+       public RemoteControl(IDevice device) { this._device = device; }
 
-       public abstract void TurnOff();
+       public void TurnOn() {
+           this._device.TurnOn();
+       }
+
+       public void TurnOff() {
+           this._device.TurnOff();
+       }
+
+       public void SetChannel(int channelNumber) {
+           this._device.SetChannel(channelNumber);
+       }
+
    }
 }
