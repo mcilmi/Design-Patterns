@@ -4,19 +4,20 @@ using System.Text;
 
 namespace BridgePattern {
    public class RemoteControl : IRemoteControl {
-       private readonly IDevice _device;
-       public RemoteControl(IDevice device) { this._device = device; }
+       protected readonly IDevice Device;
 
-       public void TurnOn() {
-           this._device.TurnOn();
+       public RemoteControl(IDevice device) {this.Device = device; }
+
+        public void TurnOn() {
+           this.Device.TurnOn();
        }
 
        public void TurnOff() {
-           this._device.TurnOff();
+           this.Device.TurnOff();
        }
 
        public void SetChannel(int channelNumber) {
-           this._device.SetChannel(channelNumber);
+           this.Device.SetChannel(channelNumber);
        }
 
    }
