@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ProxyPattern {
-    public class Ebook {
+    public class Ebook : IEbook {
         private readonly string _fileName;
 
         public Ebook(string fileName) {

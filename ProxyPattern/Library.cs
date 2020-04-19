@@ -4,9 +4,9 @@ using System.Text;
 
 namespace ProxyPattern {
     public class Library {
-        private readonly SortedDictionary<string, Ebook> _ebooks = new SortedDictionary<string, Ebook>();
-        public void Add(Ebook ebook) {
-            var hasEbook = this._ebooks.TryGetValue(ebook.GetFileName().ToLower(), out var result);
+        private readonly SortedDictionary<string, IEbook> _ebooks = new SortedDictionary<string, IEbook>();
+        public void Add(IEbook ebook) {
+            var hasEbook = this._ebooks.TryGetValue(ebook.GetFileName().ToLower(), out _);
             if (hasEbook) return;
             this._ebooks.Add(ebook.GetFileName().ToLower(),ebook);
         }
